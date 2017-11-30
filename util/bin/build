@@ -1,0 +1,32 @@
+#!/usr/bin/env bash
+
+. util/bin/mvn_color
+
+showHeader "Build"
+
+MVN_ARGS="-e -B -U"
+MVN_PROFILES="code-formatter"
+MVN_MODO="install"
+
+shift
+
+export MAVEN_OPTS="-Xmx1024m \
+ -Dorg.slf4j.simpleLogger.defaultLogLevel=warn \
+ -Dorg.slf4j.simpleLogger.levelInBrackets=true \
+ -Dorg.slf4j.simpleLogger.log.com.github.wokier.maven.progress=info \
+ -Dorg.slf4j.simpleLogger.log.org.codehaus.mojo.versions=info \
+ -Dorg.slf4j.simpleLogger.log.org.codehaus.plexus.PlexusContainer=error \
+ -Dorg.slf4j.simpleLogger.log.org.hibernate=error \
+ -Dorg.slf4j.simpleLogger.log.org.springboot.test=error"
+
+SECONDS=0;
+
+showHeader "Resolvendo Versões"
+mvn_color versions:set ${MVN_ARGS}
+
+showHeader "Construindo Apps"
+mvn clean ${MVN_MODO} -f './code-format/pom.xml' > /dev/null
+mvn clean ${MVN_MODO} -f './dependencies/pom.xml' > /dev/null
+mvn_color clean ${MVN_MODO} ${MVN_ARGS} #-P ${MVN_PROFILES}
+
+echo Tempo: $(date -u -d @${SECONDS} +"%T")

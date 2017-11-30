@@ -1,0 +1,152 @@
+<project
+		xmlns="http://maven.apache.org/POM/4.0.0"
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+							 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>io.diego.lib</groupId>
+	<artifactId>dependencies</artifactId>
+	<version>1.1.0-SNAPSHOT</version>
+
+	<packaging>pom</packaging>
+
+	<properties>
+		<persistence-api.version>1.0.2</persistence-api.version>
+		<querydsl.version>4.1.4</querydsl.version>
+		<spring-boot.version>1.5.9.RELEASE</spring-boot.version>
+		<trugger.version>6.2.0</trugger.version>
+		<guava.version>23.5-jre</guava.version>
+		<caelum-stella.version>2.1.2</caelum-stella.version>
+		<junit.version>4.12</junit.version>
+		<quartz.version>2.3.0</quartz.version>
+		<springfox-swagger.version>2.7.0</springfox-swagger.version>
+		<swagger.version>1.5.17</swagger.version>
+		<commons-validator.version>1.6</commons-validator.version>
+		<jsonwebtoken.version>0.9.0</jsonwebtoken.version>
+		<lombok.version>1.16.18</lombok.version>
+		<hibernate-tools.version>5.0.6.Final</hibernate-tools.version>
+		<thumbnailator.version>0.4.8</thumbnailator.version>
+		<eclipse-compiler.version>4.6.1</eclipse-compiler.version>
+		<pdfbox.version>2.0.8</pdfbox.version>
+		<itext.version>2.1.7</itext.version>
+	</properties>
+
+	<dependencyManagement>
+		<dependencies>
+			<!-- lombok -->
+			<dependency>
+				<groupId>org.projectlombok</groupId>
+				<artifactId>lombok</artifactId>
+				<version>${lombok.version}</version>
+			</dependency>
+			<!-- spring -->
+			<dependency>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-dependencies</artifactId>
+				<version>${spring-boot.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+			<!-- persistence -->
+			<dependency>
+				<groupId>javax.persistence</groupId>
+				<artifactId>persistence-api</artifactId>
+				<version>${persistence-api.version}</version>
+				<scope>provided</scope>
+			</dependency>
+			<dependency>
+				<groupId>org.hibernate</groupId>
+				<artifactId>hibernate-tools</artifactId>
+				<version>${hibernate-tools.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.querydsl</groupId>
+				<artifactId>querydsl-jpa</artifactId>
+				<version>${querydsl.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.querydsl</groupId>
+				<artifactId>querydsl-sql</artifactId>
+				<version>${querydsl.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.querydsl</groupId>
+				<artifactId>querydsl-core</artifactId>
+				<version>${querydsl.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.querydsl</groupId>
+				<artifactId>querydsl-apt</artifactId>
+				<version>${querydsl.version}</version>
+				<scope>provided</scope>
+			</dependency>
+			<!-- reflection -->
+			<dependency>
+				<groupId>tools.devnull</groupId>
+				<artifactId>trugger</artifactId>
+				<version>${trugger.version}</version>
+			</dependency>
+			<!-- Google -->
+			<dependency>
+				<groupId>com.google.guava</groupId>
+				<artifactId>guava</artifactId>
+				<version>${guava.version}</version>
+			</dependency>
+			<!-- Teste -->
+			<dependency>
+				<groupId>junit</groupId>
+				<artifactId>junit</artifactId>
+				<version>${junit.version}</version>
+				<scope>test</scope>
+			</dependency>
+			<!-- Validation -->
+			<dependency>
+				<groupId>br.com.caelum.stella</groupId>
+				<artifactId>caelum-stella-core</artifactId>
+				<version>${caelum-stella.version}</version>
+			</dependency>
+			<!-- cron -->
+			<dependency>
+				<groupId>org.quartz-scheduler</groupId>
+				<artifactId>quartz</artifactId>
+				<version>${quartz.version}</version>
+			</dependency>
+			<!-- jwt -->
+			<dependency>
+				<groupId>io.jsonwebtoken</groupId>
+				<artifactId>jjwt</artifactId>
+				<version>${jsonwebtoken.version}</version>
+			</dependency>
+			<!-- springfox -->
+			<dependency>
+				<groupId>io.springfox</groupId>
+				<artifactId>springfox-swagger2</artifactId>
+				<version>${springfox-swagger.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>io.springfox</groupId>
+				<artifactId>springfox-swagger-ui</artifactId>
+				<version>${springfox-swagger.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>io.swagger</groupId>
+				<artifactId>swagger-annotations</artifactId>
+				<version>${swagger.version}</version>
+			</dependency>
+			<!-- image manipulator -->
+			<dependency>
+				<groupId>net.coobird</groupId>
+				<artifactId>thumbnailator</artifactId>
+				<version>${thumbnailator.version}</version>
+			</dependency>
+			<!-- common -->
+			<dependency>
+				<groupId>commons-validator</groupId>
+				<artifactId>commons-validator</artifactId>
+				<version>${commons-validator.version}</version>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+
+</project>

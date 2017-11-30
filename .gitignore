@@ -1,0 +1,13 @@
+#idea
+/.idea/
+*.iml
+
+#maven
+target/
+java-generated/
+
+#jasper
+*.jasper
+
+#empty folder
+!/**/.gitkeep

@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+. util/bin/functions
+. util/bin/console_options

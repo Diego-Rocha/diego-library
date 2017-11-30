@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+
+if [  $# -eq 0 ]; then
+	echo "${ColorPurple}Função:${ColorOff}"
+	echo "${ColorGreen}[b]${ColorOff} - Build"
+	echo -n "Opção: "
+	read question
+else
+	question=$@
+fi
+shift
+echo
+if [[ "${question}" =~ ^b.* ]]; then
+	. util/bin/build ${question}
+else
+	showOpcaoInvalida
+fi
