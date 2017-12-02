@@ -2,12 +2,12 @@ package io.diego.lib.spring.data.service.generic.service;
 
 import com.querydsl.core.types.OrderSpecifier;
 import com.querydsl.core.types.Predicate;
+import io.diego.lib.spring.validator.ValidationException;
+import io.diego.lib.spring.validator.Validator;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.validation.BindingResult;
-import io.diego.lib.spring.validator.ValidationException;
-import io.diego.lib.spring.validator.Validator;
 
 import java.io.Serializable;
 import java.util.List;

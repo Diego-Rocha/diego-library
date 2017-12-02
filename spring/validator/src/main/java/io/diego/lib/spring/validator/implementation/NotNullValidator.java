@@ -1,9 +1,9 @@
 package io.diego.lib.spring.validator.implementation;
 
 import com.google.common.base.CaseFormat;
-import org.springframework.validation.Errors;
 import io.diego.lib.spring.validator.RequiredField;
 import io.diego.lib.spring.validator.Validator;
+import org.springframework.validation.Errors;
 
 import java.util.Collection;
 

@@ -52,7 +52,7 @@ public class GenericRepositoryImpl<T, ID extends Serializable> extends QueryDslJ
 
 	@Override
 	@Transactional(
-		rollbackFor = Throwable.class)
+			rollbackFor = Throwable.class)
 	public <S extends T> S save(S entity) {
 		if (isCleanIdStateOnSave()) {
 			cleanIdState(entity);
@@ -113,7 +113,7 @@ public class GenericRepositoryImpl<T, ID extends Serializable> extends QueryDslJ
 
 	@Override
 	@Transactional(
-		rollbackFor = Throwable.class)
+			rollbackFor = Throwable.class)
 	public void delete(T entity) {
 		ID id = (ID) entityInformation.getId(entity);
 		entity = findOne(id);

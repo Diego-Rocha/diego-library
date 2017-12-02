@@ -6,6 +6,6 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 @Configuration
 @EnableJpaRepositories(
-	repositoryBaseClass = GenericRepositoryImpl.class)
+		repositoryBaseClass = GenericRepositoryImpl.class)
 public class SpringDataServiceGenericConfig {
 }
